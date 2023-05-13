@@ -2,10 +2,10 @@
 @model quitanda_online.Pages.ProductCRUD.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Listagem de Produtos";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -44,9 +44,9 @@
                 @Html.DisplayFor(modelItem => item.Inventory)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.IdProduct">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.IdProduct">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.IdProduct">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.IdProduct">Alterar</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdProduct">Detalhes</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdProduct">Excluir</a>
             </td>
         </tr>
 }

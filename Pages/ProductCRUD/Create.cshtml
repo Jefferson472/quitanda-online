@@ -2,10 +2,10 @@
 @model quitanda_online.Pages.ProductCRUD.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Cadastrar Produto";
 }
 
-<h1>Create</h1>
+<h1>@ViewData["Title"]</h1>
 
 <h4>Product</h4>
 <hr />
@@ -34,14 +34,14 @@
                 <span asp-validation-for="Product.Inventory" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Voltar à listagem</a>
 </div>
 
 @section Scripts {

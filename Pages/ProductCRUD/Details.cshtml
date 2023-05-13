@@ -2,13 +2,13 @@
 @model quitanda_online.Pages.ProductCRUD.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes de Produto";
 }
 
-<h1>Details</h1>
+<h1>@ViewData["Title"]</h1>
 
 <div>
-    <h4>Product</h4>
+    <h4><b>Código: </b> @Model.Product.IdProduct.ToString("D6") </h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -39,5 +39,5 @@
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Product?.IdProduct">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Index">Voltar à listagem</a>
 </div>

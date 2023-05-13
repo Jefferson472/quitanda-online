@@ -10,17 +10,21 @@ namespace quitanda_online.Models
 
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         [MaxLength(100)]
+        [Display(Name = "Nome")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         [MaxLength(1000)]
+        [Display(Name = "Descrição")]
         public string Description { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         [Column(TypeName = "decimanl(18, 2)")]
+        [Display(Name = "Preço")]
         public string Price { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
+        [Display(Name = "Estoque")]
         public int Inventory { get; set; }
 
     }
