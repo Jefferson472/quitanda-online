@@ -21,7 +21,7 @@ namespace quitanda_online.Models
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         [Column(TypeName = "decimanl(18, 2)")]
         [Display(Name = "Preço")]
-        public string Price { get; set; }
+        public decimal Price { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         [Display(Name = "Estoque")]
