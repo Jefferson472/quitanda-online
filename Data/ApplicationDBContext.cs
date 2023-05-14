@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using quitanda_online.Models;
 
 namespace quitanda_online.Data
@@ -14,6 +10,7 @@ namespace quitanda_online.Data
         {
         }
 
-        public DbSet<quitanda_online.Models.Product> Product { get; set; } = default!;
+        public DbSet<Product> Product { get; set; } = default!;
+        public DbSet<Cliente> Clientes { get; set; } = default!;
     }
 }
