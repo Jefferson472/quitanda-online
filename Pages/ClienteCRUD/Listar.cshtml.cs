@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using quitanda_online.Data;
@@ -19,6 +20,24 @@ namespace quitanda_online.Pages.ClienteCRUD
         public async Task OnGetAsync()
         {
             Clientes = await _context.Clientes.ToListAsync();
+        }
+
+        public async Task<IActionResult> OnPostDeleteAsync(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var cliente = await _context.Clientes.FindAsync(id);
+
+            if (cliente != null)
+            {
+                _context.Clientes.Remove(cliente);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToPage("./Listar");
         }
     }
 }
