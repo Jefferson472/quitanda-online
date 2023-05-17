@@ -12,7 +12,7 @@ namespace quitanda_online.Models
 
         [Required(ErrorMessage = "O campo {0} é de preenchimento obrigatório.")]
         [MaxLength(100, ErrorMessage = "O campo {0} deve ter no máximo {1} caracteres.")]
-        public int Name { get; set; }
+        public string Name { get; set; }
 
         [DataType(DataType.Date, ErrorMessage = "O campo {0} deve conter uma data válida.")]
         [DisplayName("Data de Nascimento")]
