@@ -24,6 +24,7 @@
                 <th>@Html.DisplayNameFor(m => m.Clientes[0].CPF)</th>
                 <th>@Html.DisplayNameFor(m => m.Clientes[0].DataNascimento)</th>
                 <th>@Html.DisplayNameFor(m => m.Clientes[0].Email)</th>
+                <th>@Html.DisplayNameFor(m => m.Clientes[0].Telefone)</th>
                 <th class="text-center">Ações</th>
             </tr>
         </thead>
@@ -36,6 +37,7 @@
                     <td>@Html.DisplayFor(modelItem => item.CPF)</td>
                     <td>@Html.DisplayFor(modelItem => item.DataNascimento)</td>
                     <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Telefone)</td>
                     <td class="text-center">
                         <a class="btn btn-primary btn-sm" asp-page="./Alterar" asp-route-id="@item.Id">Alterar</a>
                         <form class="d-inline-block" asp-page-handler="delete" asp-route-id="@item.Id" method="POST">
