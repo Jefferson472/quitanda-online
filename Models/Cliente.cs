@@ -8,6 +8,14 @@ namespace quitanda_online.Models
 {
     public class Cliente
     {
+        public enum SituacaoCliente
+        {
+            Bloqueado,
+            Cadastrado,
+            Aprovado,
+            Especial,
+        }
+
         [Key]
         public int Id { get; set; }
 
@@ -29,6 +37,8 @@ namespace quitanda_online.Models
         [Required(ErrorMessage = "O campo {0} é de preenchimento obrigatório.")]
         [EmailAddress(ErrorMessage = "O campo {0} deve conter um endereço de email válido.")]
         public string Email { get; set; }
+
+        public SituacaoCliente Situacao { get; set; }
 
     }
 }
