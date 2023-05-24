@@ -33,8 +33,22 @@
                 <input asp-for="Cliente.Email" class="form-control" />
                 <span asp-validation-for="Cliente.Email" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="Cliente.Telefone" class="control-label"></label>
+                <input asp-for="Cliente.Telefone" class="form-control" />
+                <span asp-validation-for="Cliente.Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Cliente.Situacao">Situação do Cliente</label>
+                <select asp-for="Cliente.Situacao" class="form-control">
+                    <option value="Bloqueado">Bloqueado</option>
+                    <option value="Cadastrado">Cadastrado</option>
+                    <option value="Aprovado">Aprovado</option>
+                    <option value="Especial">Especial</option>
+                </select>
+            </div>
 
-            <div class="form-group text-left">
+            <div class="form-group text-left mt-3">
                 <a asp-page="./Listar" class="btn btn-danger">Cancelar</a>
                 <input type="submit" value="Salvar" class="btn btn-primary">
             </div>
