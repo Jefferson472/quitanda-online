@@ -35,6 +35,13 @@ namespace quitanda_online.Models
         public string CPF { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é de preenchimento obrigatório.")]
+        [MaxLength(11, ErrorMessage = "O campo {0} é de preenchimento obrigatório.")]
+        [MinLength(1, ErrorMessage = "O campo {0} é de preenchimento obrigatório.")]
+        [RegularExpression(@"[0-9]{11}$", ErrorMessage = "O campo {0} deve ser preenchido com 11 dígitos numéricos.")]
+        [UIHint("_TelefoneTemplate")]
+        public string Telefone { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} é de preenchimento obrigatório.")]
         [EmailAddress(ErrorMessage = "O campo {0} deve conter um endereço de email válido.")]
         public string Email { get; set; }
 
