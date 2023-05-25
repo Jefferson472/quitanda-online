@@ -4,6 +4,7 @@ namespace quitanda_online.Models
 {
     public class Endereco
     {
+        [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "O CEP informado não retornou um endereço válido.")]
