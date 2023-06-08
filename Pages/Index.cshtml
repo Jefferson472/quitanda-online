@@ -9,24 +9,30 @@
 </div>
 
 <div class="row">
-    @foreach (var product in Model.Products)
-    {
-        <div class="col-sm-4">
-            <div class="card text-center bg-light mb-4">
-                <img class="card-img-top" src="img/produto/@String.Concat(product.IdProduct.ToString("D6"), ".jpg")" alt="Imagem de @product.Name">
-                <div class="card-header">
-                    R$ @product.Price.ToString("F2")
-                </div>
-                <div class="card-body" style="height: 124px;">
-                    <h5 class="card-title">@product.Name</h5>
-                    <p class="card-text">@product.Description</p>
-                </div>
-                <div class="card-footer">
-                    <div><a href="#" class="btn btn-primary">Adicionar ao Carrinho</a></div>
-                    <small class="text-muted">Estoque: @product.Inventory</small>
+    @if (Model.Products.Count > 0)
+    {        
+        @foreach (var product in Model.Products)
+        {
+            <div class="col-sm-4">
+                <div class="card text-center bg-light mb-4">
+                    <img class="card-img-top" src="img/produto/@String.Concat(product.IdProduct.ToString("D6"), ".jpg")" alt="Imagem de @product.Name">
+                    <div class="card-header">
+                        R$ @product.Price.ToString("F2")
+                    </div>
+                    <div class="card-body" style="height: 124px;">
+                        <h5 class="card-title">@product.Name</h5>
+                        <p class="card-text">@product.Description</p>
+                    </div>
+                    <div class="card-footer">
+                        <div><a href="#" class="btn btn-primary">Adicionar ao Carrinho</a></div>
+                        <small class="text-muted">Estoque: @product.Inventory</small>
+                    </div>
                 </div>
             </div>
-        </div>
+        }
     }
-
+    else
+    {
+        <h1>Não há produtos cadastrados.</h1>    
+    }
 </div>
