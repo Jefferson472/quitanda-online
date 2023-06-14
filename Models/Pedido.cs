@@ -39,6 +39,6 @@ namespace quitanda_online.Models
 
         public Endereco Endereco { get; set; }
 
-        public ICollection<ItemPedido> ItensPedido { get; set; }
+        public ICollection<ItemPedido> ItemPedido { get; set; }
     }
 }
