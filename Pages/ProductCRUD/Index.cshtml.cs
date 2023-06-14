@@ -28,5 +28,22 @@ namespace quitanda_online.Pages.ProductCRUD
                 Product = await _context.Product.ToListAsync();
             }
         }
+        public async Task<IActionResult> OnPostDeleteAsync(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var produto = await _context.Product.FindAsync(id);
+
+            if (produto != null)
+            {
+                _context.Product.Remove(produto);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToPage("./Index");
+        }
     }
 }
